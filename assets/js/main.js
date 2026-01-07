@@ -83,3 +83,33 @@ sr.reveal(`.specs__data, .discount__animate`, {origin: 'left', interval: 100})
 sr.reveal(`.specs__img, .discount__img`, {origin: 'right'})
 sr.reveal(`.case__img`, {origin: 'top'})
 sr.reveal(`.case__data`)
+
+
+/*==================== MODAL ====================*/
+const modal = document.getElementById('carouselModal');
+const openBtn = document.getElementById('openModal');
+const closeBtn = modal.querySelector('.close');
+const items = modal.querySelectorAll('.carousel-item');
+const prevBtn = modal.querySelector('.prev');
+const nextBtn = modal.querySelector('.next');
+let currentIndex = 0;
+
+// Show the slide inside modal
+function showSlide(index) {
+  items.forEach((item, i) => item.style.display = i === index ? 'flex' : 'none');
+}
+
+// OPEN modal
+openBtn.onclick = () => {
+  modal.style.display = 'flex';
+  currentIndex = 0;
+  showSlide(currentIndex);
+};
+
+// CLOSE modal
+closeBtn.onclick = () => modal.style.display = 'none';
+window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+
+// NAVIGATION
+nextBtn.onclick = () => { currentIndex = (currentIndex + 1) % items.length; showSlide(currentIndex); };
+prevBtn.onclick = () => { currentIndex = (currentIndex - 1 + items.length) % items.length; showSlide(currentIndex); };

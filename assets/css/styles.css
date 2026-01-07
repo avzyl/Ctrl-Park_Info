@@ -13,7 +13,7 @@
   --white-color: #FFF;
   --body-color: hsl(var(--hue-color), 4%, 6%);
   --container-color: hsl(var(--hue-color), 4%, 10%);
-  --text-gradient: linear-gradient(hsl(var(--hue-color), 4%, 24%), hsl(var(--hue-color), 4%, 8%));
+  --text-gradient: linear-gradient(hsl(var(--hue-color), 80%, 65%), hsl(var(--hue-color), 5%, 5%));
   --scroll-thumb-color: hsl(var(--hue-color), 4%, 16%);
   --scroll-thumb-color-alt: hsl(var(--hue-color), 4%, 20%);
   /*========== Font and typography ==========*/
@@ -232,12 +232,12 @@ img {
 .home__img {
   width: 250px;
   position: absolute;
-  top: 10rem;
-  right: 1.5rem;
+  top: 2rem;
+  margin: auto;
 }
 
 .home__data {
-  padding-top: 5rem;
+  padding-top: 15rem;
 }
 
 .home__header {
@@ -302,21 +302,35 @@ img {
   column-gap: .75rem;
 }
 
-/*=============== SPONSOR ===============*/
-.sponsor__title {
-  text-align: center;
+/*=============== PROCEDURE ===============*/
+.procedure__steps {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
-.sponsor__img {
-  width: 90px;
+.procedure__step {
+  background: var(--container-color);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
 }
 
-.sponsor__container {
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  row-gap: 5rem;
-  justify-items: center;
-  align-items: center;
+.procedure__number {
+  font-size: 2rem;
+  font-weight: var(--font-semi-bold);
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  color: transparent;
 }
+
+.procedure__step h3 {
+  margin: .5rem 0;
+}
+
+.procedure__step p {
+  color: var(--text-color-light);
+}
+
 
 /*=============== SPECS ===============*/
 .specs__container {
@@ -402,54 +416,223 @@ img {
   right: -11rem;
 }
 
-/*=============== PRODUCTS ===============*/
-.products__line {
-  line-height: 4rem;
-}
-
-.products__container {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 5rem 1.5rem;
-  padding-top: 3rem;
-}
-
-.products__card{
-  position: relative;
-  height: 132px;
+/*=============== DEVELOPERS ===============*/
+.dev__card {
   background-color: var(--container-color);
-  padding: .75rem;
-  border-radius: .5rem;
+  padding: 2rem 1.5rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  transition: .3s;
+}
+
+.dev__card:hover {
+  transform: translateY(-6px);
+}
+
+.dev__content {
   display: grid;
+  row-gap: 1rem;
 }
 
-.products__img {
-  width: 80px;
-  position: absolute;
-  inset: 0;
-  margin-right: auto;
-  margin-left: auto;
-  top: -3rem;
+/* Bigger + responsive images */
+.dev__img {
+  width: 200px;
+  max-width: 100%;
+  justify-self: center;
+  border-radius: 1.25rem;
+  object-fit: cover;
 }
 
-.products__content {
-  align-self: flex-end;
-}
-
-.products__title, .products__price {
-  font-size: var(--small-font-size);
-}
-
-.products__price {
+/* Text */
+.dev__name {
+  font-size: var(--h3-font-size);
   font-weight: var(--font-semi-bold);
 }
 
-.products__button {
-  position: absolute;
-  right: .5rem;
-  bottom: .5rem;
-  padding: .5rem;
-  border-radius: .35rem;
+.dev__role {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
 }
+
+.developers__container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;   /* mobile default: 1 card */
+}
+
+/* Medium screens: 2 cards */
+@media (min-width: 640px) {
+  .developers__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3 cards */
+@media (min-width: 1024px) {
+  .developers__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/*=============== ABOUT ===============*/
+/* Section wrapper */
+.ctrlpark {
+  padding: 0rem 0;
+}
+
+/* Title */
+.ctrlpark .section__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Intro text */
+.ctrlpark__intro {
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  line-height: 1.8;
+  color: var(--text-color, #555);
+}
+
+/* Grid cards */
+.ctrlpark__grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-bottom: 2.5rem;
+}
+
+.ctrlpark__card {
+  background: var(--container-color, #0e1625);
+  border-radius: 1.25rem;
+  padding: 1.5rem 1.25rem;
+  transition: .3s ease;
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.ctrlpark__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 30px rgba(0,0,0,.18);
+}
+
+.ctrlpark__card h3 {
+  margin-bottom: .5rem;
+  font-size: 1.05rem;
+}
+
+.ctrlpark__card p {
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+/* Subheading */
+.ctrlpark__subtitle {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* List */
+.ctrlpark__list {
+  max-width: 650px;
+  margin: 0 auto;
+  display: grid;
+  gap: .5rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.ctrlpark__list li::before {
+  content: "✔ ";
+  color: #38bdf8;
+}
+
+/*=============== CAROUSEL ===============*/
+/* Modal is hidden by default */
+.modal {
+  display: none;        /* important */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal content */
+.modal-content {
+  position: relative;
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  max-width: 800px;
+  width: 90%;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+/* Carousel Items */
+.carousel-container {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel-item {
+  display: none;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column; /* ensures caption is below image/video */
+  align-items: center;
+}
+
+.carousel-item img,
+.carousel-item iframe {
+  max-width: 100%;
+  border-radius: 1rem;
+}
+
+/* Caption below the item */
+.carousel-caption {
+  margin-top: 0.5rem;
+  font-size: var(--normal-font-size);
+  color: var(--text-color-light);
+  text-align: center;
+}
+
+/* Prev/Next buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 0.5rem 1rem;
+  color: var(--white-color);
+  font-size: 2rem;
+  background-color: rgba(0,0,0,0.3);
+  border: none;
+  border-radius: 0.5rem;
+  user-select: none;
+  transform: translateY(-50%);
+}
+
+.prev { left: 1rem; }
+.next { right: 1rem; }
 
 /*=============== FOOTER ===============*/
 .footer__container {

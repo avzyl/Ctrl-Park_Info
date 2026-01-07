@@ -13,14 +13,14 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <!--========= MAIN JS =========-->
   <script src="assets/js/main.js" defer></script>
-  <title>Beats</title>
+  <title>Ctrl+Park</title>
 </head>
 <body>
   <!--========= HEADER =========-->
   <header class="header" id="header">
     <nav class="nav container">
       <a href="#" class="nav__logo">
-        <img src="assets/img/logo.png" alt="">
+        <img src="assets/img/logo.svg" alt="">
       </a>
 
       <div class="nav__menu" id="nav-menu">
@@ -29,13 +29,13 @@
             <a href="#home" class="nav__link active-link">Home</a>
           </li>
           <li class="nav__item">
-            <a href="#specs" class="nav__link">Specs</a>
+            <a href="#specs" class="nav__link">Features</a>
           </li>
           <li class="nav__item">
-            <a href="#case" class="nav__link">Case</a>
+            <a href="#what-is" class="nav__link">About</a>
           </li>
           <li class="nav__item">
-            <a href="#products" class="nav__link">Products</a>
+            <a href="#developers" class="nav__link">Shift+Dev</a>
           </li>
         </ul>
 
@@ -69,7 +69,7 @@
             <p class="home__description">
              A Smart Real-Time Outdoor Parking Monitoring System designed to make parking management easier, faster, and more secure. Using real-time cameras and automatic license plate recognition, the system tracks parking slot availability and vehicle entries.
             </p>
-            <a href="#" class="button button--flex">
+            <a href="https://avzyl.github.io/Ctrl-Park_App/index.html" class="button button--flex">
               <span class="button--flex">
                 <i class="ri-link"></i>
               </span>
@@ -82,14 +82,43 @@
 
     <!--========= SPONSORS =========-->
     <h2 class="section__title section__title-gradient">Procedure</h2>
+
     <section class="sponsor section">
-      <div class="sponsor__container container grid">
-        <img src="assets/img/sponsor1.png" alt="" class="sponsor__img">
-        <img src="assets/img/sponsor2.png" alt="" class="sponsor__img">
-        <img src="assets/img/sponsor3.png" alt="" class="sponsor__img">
-        <img src="assets/img/sponsor4.png" alt="" class="sponsor__img">
+      <div class="sponsor__container container grid procedure__steps">
+
+        <div class="procedure__step">
+          <span class="procedure__number">01</span>
+          <h3>Vehicle Enters</h3>
+          <p>Vehicles enter through CEU Gate 3 where a camera captures the car and license plate. CCTV ensures all parking areas are monitored for security.</p>
+        </div>
+
+        <div class="procedure__step">
+          <span class="procedure__number">02</span>
+          <h3>License Plate Recognition & Verification</h3>
+          <p>Ctrl+Park uses computer vision and license plate recognition (LPR) to verify registered and authorized vehicles.</p>
+        </div>
+
+        <div class="procedure__step">
+          <span class="procedure__number">03</span>
+          <h3>Logging & Monitoring</h3>
+          <p>Vehicle entries, plate numbers, timestamps, and parking slot assignments are logged. CCTV footage complements vehicle verification and tracking.</p>
+        </div>
+
+        <div class="procedure__step">
+          <span class="procedure__number">04</span>
+          <h3>Live Status Update</h3>
+          <p>Parking availability updates instantly. Users and admins can view live occupancy, vehicle movements, and history on web and mobile platforms.</p>
+        </div>
+
+        <div class="procedure__step">
+          <span class="procedure__number">05</span>
+          <h3>Enhanced User Experience</h3>
+          <p>Through dashboards, notifications, and automated monitoring, Ctrl+Park ensures efficient parking management, improved security, and minimal congestion.</p>
+        </div>
+
       </div>
     </section>
+
 
     <!--========= SPECS =========-->
     <section class="specs section grid" id="specs">
@@ -127,121 +156,164 @@
       </div>
     </section>
 
-    <!--========= CASE =========-->
-    <section class="case section grid" id="case">
+    <!--========= ABOUT =========-->
+    <h2 class="section__title section__title-gradient" style="padding-top: 4rem;">Behind Ctrl+Park</h2>
+    <section class="ctrlpark section grid" id="what-is">
       <div class="container">
-        <h2 class="section__title section__title-gradient">Case</h2>
+        <p class="ctrlpark__intro">
+          Ctrl+Park is a research-based smart parking monitoring system developed by a team of undergraduate students as part of their capstone project. 
+      Designed for schools, campuses, and parking facilities, the system uses real-time license plate detection to streamline parking management and enhance security.
+        </p>
 
-        <div class="case__container container grid">
-          <div>
-            <img src="assets/img/case.png" alt="" class="case__img">
+        <!-- Timeline / Journey Cards -->
+        <div class="ctrlpark__grid">
+
+          <div class="ctrlpark__card">
+            <h3>Inspiration</h3>
+            <p>The project was inspired by the challenges of managing parking areas manually. 
+            Our goal was to streamline parking operations and provide a reliable system for schools and campuses.</p>
           </div>
 
-          <div class="case__data">
-            <p class="case__description">With a confortable and adaptable case so that you can store it whenever
-             you want, and keep your durability forever</p>
-  
-            <a href="#" class="button button--flex">
-              <i class="ri-information-line button__icon"></i> More info
-            </a>
+          <div class="ctrlpark__card">
+            <h3>Research & Planning</h3>
+            <p>We studied real-time computer vision, OCR technologies, and database management to design a system capable of automatic license plate recognition.</p>
           </div>
-        </div>       
-      </div>
-    </section>
 
-    <!--========= DISCOUNT =========-->
-    <section class="discount section">
-      <div class="discount__container container grid">
-        <div class="discount__animate">
-          <h2 class="discount__title">Immerse yourself in <br> your music</h2>
-          <p class="discount__description">Get it now, up to 50% off.</p>
-          <a href="#" class="button button--flex">
-            <i class="ri-shopping-bag-line button__icon"></i> Shop Now
-          </a>
+          <div class="ctrlpark__card">
+            <h3>Development Phase</h3>
+            <p>Each developer focused on a core module—frontend, backend, and real-time detection—collaborating to integrate the system into a cohesive prototype.</p>
+          </div>
+
+          <div class="ctrlpark__card">
+            <h3>Testing & Validation</h3>
+            <p>We conducted trials to ensure accuracy, reliability, and usability, refining the system based on real-world scenarios and feedback from peers.</p>
+          </div>
+
+          <div class="ctrlpark__card">
+            <h3>Outcomes & Learning</h3>
+            <p>The project enhanced our research and technical skills, demonstrating the practical application of our undergraduate studies while producing a functional prototype for future research or implementation.</p>
+          </div>
+
         </div>
 
-        <img src="assets/img/discount.png" alt="" class="discount__img">
+        <h3 class="ctrlpark__subtitle">Built For</h3>
+
+        <ul class="ctrlpark__list">
+          <li>Schools & universities</li>
+          <li>Campus parking areas</li>
+          <li>Private parking lots</li>
+          <li>Company facilities</li>
+          <li>Gated communities</li>
+        </ul>
+
       </div>
     </section>
 
-    <!--========= PRODUCTS =========-->
-    <section class="products section" id="products">
+    <!--========= DEMO BUTTON SECTION =========-->
+    <section class="discount section" id="demo">
+      <div class="discount__container container grid">
+        <div class="discount__animate">
+          <h2 class="discount__title">See Ctrl+Park in Action</h2>
+          <p class="discount__description">
+            Explore how our smart parking system works in real-time.
+          </p>
+
+          <!-- Button to open modal -->
+          <button class="button button--flex" id="openModal">
+            <i class="ri-play-line button__icon"></i> View
+          </button>
+        </div>
+
+        <!-- <img src="assets/img/parking_demo.png" alt="Ctrl+Park Demo" class="discount__img"> -->
+      </div>
+    </section>
+
+    <!-- Modal Carousel -->
+    <div id="carouselModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <div class="carousel-container">
+          <div class="carousel-item">
+            <img src="assets/img/plate_demo.png" alt="Slide 1">
+            <p class="carousel-caption">Plate Detection Demo</p>
+          </div>
+
+          <div class="carousel-item">
+            <img src="assets/img/live_plate.png" alt="Slide 2">
+            <p class="carousel-caption">Live Plate Detection</p>
+          </div>
+
+          <div class="carousel-item">
+            <img src="assets/img/livestream.png" alt="Slide 2">
+            <p class="carousel-caption">CCTV Livestream</p>
+          </div>
+
+          <div class="carousel-item">
+            <img src="assets/img/ss_slots.png" alt="Slide 2">
+            <p class="carousel-caption">2D Map View</p>
+          </div>
+
+          <div class="carousel-item">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo Video" frameborder="0" allowfullscreen></iframe>
+            <p class="carousel-caption">System demonstration video</p>
+          </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+
+
+
+    <!--========= DEVELOPERS =========-->
+    <section class="products section" id="developers">
       <h2 class="section__title section__title-gradient products__line">
-        Choose <br> Your Style
+        The Developers
       </h2>
 
-      <div class="products__container container grid">
-        <article class="products__card">
-          <div class="products__content">
-            <img src="assets/img/product1.png" alt="" class="products__img">
-            <h3 class="products__title">Black</h3>
-            <span class="products__price">$249</span>
+      <div class="developers__container container">
 
-            <button class="button button--flex products__button">
-              <i class="ri-shopping-bag-line button__icon"></i>
-            </button>
+        <article class="dev__card">
+          <div class="dev__content">
+            <img src="assets/img/lyzza.jpg" class="dev__img">
+            <h3 class="dev__name">Lyzza Rose Abig</h3>
+            <span class="dev__role">Project Lead</span>
           </div>
         </article>
 
-        <article class="products__card">
-          <div class="products__content">
-            <img src="assets/img/product2.png" alt="" class="products__img">
-            <h3 class="products__title">Red Black</h3>
-            <span class="products__price">$249</span>
-
-            <button class="button button--flex products__button">
-              <i class="ri-shopping-bag-line button__icon"></i>
-            </button>
+        <article class="dev__card">
+          <div class="dev__content">
+            <img src="assets/img/bea.jpeg" class="dev__img">
+            <h3 class="dev__name">Bea Patrice Cortez</h3>
+            <span class="dev__role">Frontend Developer</span>
           </div>
         </article>
 
-        <article class="products__card">
-          <div class="products__content">
-            <img src="assets/img/product3.png" alt="" class="products__img">
-            <h3 class="products__title">Night Black</h3>
-            <span class="products__price">$249</span>
-
-            <button class="button button--flex products__button">
-              <i class="ri-shopping-bag-line button__icon"></i>
-            </button>
+        <article class="dev__card">
+          <div class="dev__content">
+            <img src="assets/img/marc.png" class="dev__img">
+            <h3 class="dev__name">Marc Anthony Zapata</h3>
+            <span class="dev__role">Backend Developer</span>
           </div>
         </article>
 
-        <article class="products__card">
-          <div class="products__content">
-            <img src="assets/img/product4.png" alt="" class="products__img">
-            <h3 class="products__title">Blue</h3>
-            <span class="products__price">$249</span>
-
-            <button class="button button--flex products__button">
-              <i class="ri-shopping-bag-line button__icon"></i>
-            </button>
-          </div>
-        </article>
-
-        <article class="products__card">
-          <div class="products__content">
-            <img src="assets/img/product5.png" alt="" class="products__img">
-            <h3 class="products__title">Twilight Gray</h3>
-            <span class="products__price">$249</span>
-
-            <button class="button button--flex products__button">
-              <i class="ri-shopping-bag-line button__icon"></i>
-            </button>
-          </div>
-        </article>
       </div>
     </section>
+
   </main>
 
   <!--========= FOOTER =========-->
   <footer class="footer section">
     <div class="footer__container container grid">
-      <a href="#" class="footer__logo">
+      <!-- <a href="#" class="footer__logo">
         <img src="assets/img/logo.png" alt="">
-      </a>
+      </a> -->
 
-      <div class="footer__content">
+      <!-- <div class="footer__content">
         <h3 class="footer__title">Products</h3>
 
         <ul class="footer__links">
@@ -258,9 +330,9 @@
             <a href="#" class="footer__link">Accesories</a>
           </li>
         </ul>
-      </div>
+      </div> -->
 
-      <div class="footer__content">
+      <!-- <div class="footer__content">
         <h3 class="footer__title">Support</h3>
 
         <ul class="footer__links">
@@ -277,9 +349,9 @@
             <a href="#" class="footer__link">Provides</a>
           </li>
         </ul>
-      </div>
+      </div> -->
 
-      <div class="footer__content">
+      <!-- <div class="footer__content">
         <form action="" class="footer__form">
           <input type="email" placeholder="Email" class="footer__input">
           <button class="button button--flex">
@@ -298,7 +370,7 @@
             <i class="ri-twitter-line"></i>
           </a>
         </div>
-      </div>
+      </div> -->
 
     </div>
 
