@@ -80,47 +80,7 @@
       </div>
     </section>
 
-    <!--========= SPONSORS =========-->
-    <h2 class="section__title section__title-gradient">Procedure</h2>
-
-    <section class="sponsor section">
-      <div class="sponsor__container container grid procedure__steps">
-
-        <div class="procedure__step">
-          <span class="procedure__number">01</span>
-          <h3>Vehicle Enters</h3>
-          <p>Vehicles enter through CEU Gate 3 where a camera captures the car and license plate. CCTV ensures all parking areas are monitored for security.</p>
-        </div>
-
-        <div class="procedure__step">
-          <span class="procedure__number">02</span>
-          <h3>License Plate Recognition & Verification</h3>
-          <p>Ctrl+Park uses computer vision and license plate recognition (LPR) to verify registered and authorized vehicles.</p>
-        </div>
-
-        <div class="procedure__step">
-          <span class="procedure__number">03</span>
-          <h3>Logging & Monitoring</h3>
-          <p>Vehicle entries, plate numbers, timestamps, and parking slot assignments are logged. CCTV footage complements vehicle verification and tracking.</p>
-        </div>
-
-        <div class="procedure__step">
-          <span class="procedure__number">04</span>
-          <h3>Live Status Update</h3>
-          <p>Parking availability updates instantly. Users and admins can view live occupancy, vehicle movements, and history on web and mobile platforms.</p>
-        </div>
-
-        <div class="procedure__step">
-          <span class="procedure__number">05</span>
-          <h3>Enhanced User Experience</h3>
-          <p>Through dashboards, notifications, and automated monitoring, Ctrl+Park ensures efficient parking management, improved security, and minimal congestion.</p>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!--========= SPECS =========-->
+        <!--========= SPECS =========-->
     <section class="specs section grid" id="specs">
       <h2 class="section__title section__title-gradient">Features</h2>
 
@@ -161,45 +121,65 @@
       </div>
     </section>
 
-    <!--========= ABOUT =========-->
-    <h2 class="section__title section__title-gradient" style="padding-top: 4rem;">Behind Ctrl+Park</h2>
-    <section class="ctrlpark section grid" id="what-is">
-      <div class="container">
-        <p class="ctrlpark__intro">
-          Ctrl+Park is a research-based smart parking monitoring system developed by a team of undergraduate students as part of their capstone project. 
-      Designed for schools, campuses, and parking facilities, the system uses real-time license plate detection to streamline parking management and enhance security.
-        </p>
+    <!--========= SYS ARCH =========-->
+    <section class="components section" id="components">
+      <h2 class="section__title section__title-gradient">System Components</h2>
 
-        <!-- Timeline / Journey Cards -->
-        <div class="ctrlpark__grid">
+      <div class="components__container container grid">
 
-          <div class="ctrlpark__card">
-            <h3>Inspiration</h3>
-            <p>The project was inspired by the challenges of managing parking areas manually. 
-            Our goal was to streamline parking operations and provide a reliable system for schools and campuses.</p>
-          </div>
+        <!-- Gate Webcam -->
+        <article class="components__card">
+          <i class="ri-camera-line components__icon"></i>
+          <h3 class="components__title">Gate Webcam</h3>
+          <p class="components__description">
+            A webcam installed at the gate captures incoming vehicles and scans license plates in real time for identification and logging.
+          </p>
+        </article>
 
-          <div class="ctrlpark__card">
-            <h3>Research & Planning</h3>
-            <p>We studied real-time computer vision, OCR technologies, and database management to design a system capable of automatic license plate recognition.</p>
-          </div>
+        <!-- Parking Lot CCTV -->
+        <article class="components__card">
+          <i class="ri-cctv-line components__icon"></i>
+          <h3 class="components__title">Parking Lot CCTV (RTSP)</h3>
+          <p class="components__description">
+            An RTSP-enabled CCTV camera monitors the parking area, allowing the system to detect vehicles and estimate parking slot occupancy.
+          </p>
+        </article>
 
-          <div class="ctrlpark__card">
-            <h3>Development Phase</h3>
-            <p>Each developer focused on a core module—frontend, backend, and real-time detection—collaborating to integrate the system into a cohesive prototype.</p>
-          </div>
+        <!-- Computer Vision -->
+        <article class="components__card">
+          <i class="ri-focus-3-line components__icon"></i>
+          <h3 class="components__title">Computer Vision</h3>
+          <p class="components__description">
+            YOLOv8 is used for vehicle and license plate detection, while EasyOCR extracts plate numbers from captured images.
+          </p>
+        </article>
 
-          <div class="ctrlpark__card">
-            <h3>Testing & Validation</h3>
-            <p>We conducted trials to ensure accuracy, reliability, and usability, refining the system based on real-world scenarios and feedback from peers.</p>
-          </div>
+        <!-- Backend & Processing -->
+        <article class="components__card">
+          <i class="ri-cpu-line components__icon"></i>
+          <h3 class="components__title">Processing System</h3>
+          <p class="components__description">
+            A central computer processes live video streams, runs detection models, and handles real-time decision-making.
+          </p>
+        </article>
 
-          <div class="ctrlpark__card">
-            <h3>Outcomes & Learning</h3>
-            <p>The project enhanced our research and technical skills, demonstrating the practical application of our undergraduate studies while producing a functional prototype for future research or implementation.</p>
-          </div>
+        <!-- Database -->
+        <article class="components__card">
+          <i class="ri-database-2-line components__icon"></i>
+          <h3 class="components__title">Firebase Database</h3>
+          <p class="components__description">
+            Firebase stores vehicle records, timestamps, and detection results, enabling real-time data updates and synchronization.
+          </p>
+        </article>
 
-        </div>
+        <!-- System Integration -->
+        <article class="components__card">
+          <i class="ri-links-line components__icon"></i>
+          <h3 class="components__title">System Integration</h3>
+          <p class="components__description">
+            All hardware and software components work together to provide live monitoring, logging, and parking status visualization.
+          </p>
+        </article>
 
         <h3 class="ctrlpark__subtitle">Built For</h3>
 
@@ -271,14 +251,98 @@
       </div>
     </div>
 
+    <!--========= PROCEDURE =========-->
+    <section class="sponsor section">
+      <h2 class="section__title section__title-gradient">Procedure</h2>
+      <div class="sponsor__container container grid procedure__steps">
+
+        <div class="procedure__step">
+          <span class="procedure__number">01</span>
+          <h3>Vehicle Enters</h3>
+          <p>Vehicles enter through the Gate where a camera captures the car and license plate. CCTV ensures all parking areas are monitored for security.</p>
+        </div>
+
+        <div class="procedure__step">
+          <span class="procedure__number">02</span>
+          <h3>License Plate Recognition & Verification</h3>
+          <p>Ctrl+Park uses computer vision and license plate recognition (LPR) to verify registered and authorized vehicles.</p>
+        </div>
+
+        <div class="procedure__step">
+          <span class="procedure__number">03</span>
+          <h3>Logging & Monitoring</h3>
+          <p>Vehicle entries, plate numbers, timestamps, and parking slot assignments are logged. CCTV footage complements vehicle verification and tracking.</p>
+        </div>
+
+        <div class="procedure__step">
+          <span class="procedure__number">04</span>
+          <h3>Live Status Update</h3>
+          <p>Parking availability updates instantly. Users and admins can view live occupancy, vehicle movements, and history on web and mobile platforms.</p>
+        </div>
+
+        <div class="procedure__step">
+          <span class="procedure__number">05</span>
+          <h3>Enhanced User Experience</h3>
+          <p>Through dashboards, notifications, and automated monitoring, Ctrl+Park ensures efficient parking management, improved security, and minimal congestion.</p>
+        </div>
+
+      </div>
+    </section>
 
 
+    <!--========= ABOUT =========-->
+    <h2 class="section__title section__title-gradient" style="padding-top: 4rem;">Behind Ctrl+Park</h2>
+    <section class="ctrlpark section grid" id="what-is">
+      <div class="container">
+        <p class="ctrlpark__intro">
+          Ctrl+Park is a research-based smart parking monitoring system developed by a team of undergraduate students as part of their capstone project. 
+      Designed for schools, campuses, and parking facilities, the system uses real-time license plate detection to streamline parking management and enhance security.
+        </p>
+
+        <!-- Timeline / Journey Cards -->
+        <div class="ctrlpark__grid">
+
+          <div class="ctrlpark__card">
+            <h3>Inspiration</h3>
+            <p>The project was inspired by the challenges of managing parking areas manually. 
+            Our goal was to streamline parking operations and provide a reliable system for schools and campuses.</p>
+          </div>
+
+          <div class="ctrlpark__card">
+            <h3>Research & Planning</h3>
+            <p>We studied real-time computer vision, OCR technologies, and database management to design a system capable of automatic license plate recognition.</p>
+          </div>
+
+          <div class="ctrlpark__card">
+            <h3>Development Phase</h3>
+            <p>Each developer focused on a core module—frontend, backend, and real-time detection—collaborating to integrate the system into a cohesive prototype.</p>
+          </div>
+
+          <div class="ctrlpark__card">
+            <h3>Testing & Validation</h3>
+            <p>We conducted trials to ensure accuracy, reliability, and usability, refining the system based on real-world scenarios and feedback from peers.</p>
+          </div>
+
+          <div class="ctrlpark__card">
+            <h3>Outcomes & Learning</h3>
+            <p>The project enhanced our research and technical skills, demonstrating the practical application of our undergraduate studies while producing a functional prototype for future research or implementation.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
 
     <!--========= DEVELOPERS =========-->
     <section class="products section" id="developers">
       <h2 class="section__title section__title-gradient products__line">
         The Developers
       </h2>
+
+      <p class="ctrlpark__devs">
+        Meet the undergraduate research team behind Ctrl+Park. Each member played a key role in designing, developing, and validating the system—from system planning and interface design to backend integration and real-time license plate recognition.
+      </p>
+
 
       <div class="developers__container container">
 
@@ -287,6 +351,7 @@
             <img src="assets/img/lyzza.jpg" class="dev__img">
             <h3 class="dev__name">Lyzza Rose Abig</h3>
             <span class="dev__role">Project Lead</span>
+            <p class="dev__desc">Oversaw system design, research direction, and team coordination.</p>
           </div>
         </article>
 
@@ -295,6 +360,7 @@
             <img src="assets/img/bea.jpeg" class="dev__img">
             <h3 class="dev__name">Bea Patrice Cortez</h3>
             <span class="dev__role">Frontend Developer</span>
+            <p class="dev__desc">Designed the user interface and ensured a smooth user experience.</p>
           </div>
         </article>
 
@@ -303,6 +369,7 @@
             <img src="assets/img/marc.png" class="dev__img">
             <h3 class="dev__name">Marc Anthony Zapata</h3>
             <span class="dev__role">Backend Developer</span>
+            <p class="dev__desc">Handled server logic, database integration, and system reliability.</p>
           </div>
         </article>
 
