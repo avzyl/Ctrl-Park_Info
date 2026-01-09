@@ -281,7 +281,7 @@ img {
 /*=============== BUTTONS ===============*/
 .button {
   display: inline-block;
-  background-color: var(--black-color);
+  background-color: #65b3d4;
   color: var(--white-color);
   padding: 1rem 1.25rem;
   border-radius: .5rem;
@@ -633,6 +633,41 @@ img {
 
 .prev { left: 1rem; }
 .next { right: 1rem; }
+
+/*=============== MODAL ===============*/
+/* Clickable cursor */
+.zoom-trigger {
+  cursor: zoom-in;
+}
+
+/* Modal overlay */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal image */
+.image-modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+/* Close button */
+.image-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+}
 
 /*=============== FOOTER ===============*/
 .footer__container {

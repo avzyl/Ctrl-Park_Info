@@ -96,14 +96,14 @@ let currentIndex = 0;
 
 // Show the slide inside modal
 function showSlide(index) {
-  items.forEach((item, i) => item.style.display = i === index ? 'flex' : 'none');
+    items.forEach((item, i) => item.style.display = i === index ? 'flex' : 'none');
 }
 
 // OPEN modal
 openBtn.onclick = () => {
-  modal.style.display = 'flex';
-  currentIndex = 0;
-  showSlide(currentIndex);
+    modal.style.display = 'flex';
+    currentIndex = 0;
+    showSlide(currentIndex);
 };
 
 // CLOSE modal
@@ -113,3 +113,34 @@ window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; 
 // NAVIGATION
 nextBtn.onclick = () => { currentIndex = (currentIndex + 1) % items.length; showSlide(currentIndex); };
 prevBtn.onclick = () => { currentIndex = (currentIndex - 1 + items.length) % items.length; showSlide(currentIndex); };
+
+
+/*==================== PHONE MODAL ====================*/
+const zoomImg = document.getElementById('zoomImage');
+const imgModal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImg');
+const closeImg = document.querySelector('.image-close');
+
+let scale = 1;
+
+// Open modal
+zoomImg.onclick = () => {
+  imgModal.style.display = 'flex';
+  modalImg.src = zoomImg.src;
+  scale = 1;
+  modalImg.style.transform = `scale(${scale})`;
+};
+
+// Close modal
+closeImg.onclick = () => imgModal.style.display = 'none';
+imgModal.onclick = (e) => {
+  if (e.target === imgModal) imgModal.style.display = 'none';
+};
+
+// Scroll to zoom
+modalImg.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  scale += e.deltaY * -0.001;
+  scale = Math.min(Math.max(1, scale), 3);
+  modalImg.style.transform = `scale(${scale})`;
+});
